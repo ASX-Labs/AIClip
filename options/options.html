@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIClip — Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="page">
+    <nav class="sidebar">
+      <div class="sidebar-logo">AIClip</div>
+      <ul class="nav-list">
+        <li class="nav-item active" data-tab="notebooks">Notebooks</li>
+        <li class="nav-item" data-tab="library">Library</li>
+        <li class="nav-item" data-tab="data">Data</li>
+        <li class="nav-item" data-tab="about">About</li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+
+      <div class="tab-panel active" id="tab-notebooks">
+        <h2 class="tab-title">Notebooks</h2>
+        <p class="tab-desc">Organize your clipped responses into notebooks.</p>
+        <div class="card">
+          <div class="card-label">ADD NOTEBOOK</div>
+          <div class="add-row">
+            <input type="text" id="new-notebook" placeholder="Notebook name..." class="opt-input">
+            <button class="save-btn" id="add-notebook-btn">Add</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">YOUR NOTEBOOKS</div>
+          <div id="notebooks-list" class="notebooks-list"></div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-library">
+        <h2 class="tab-title">Clip Library</h2>
+        <p class="tab-desc">Browse and manage all your saved clips.</p>
+        <div class="lib-toolbar">
+          <input type="text" id="lib-search" placeholder="Search..." class="opt-input" style="flex:1">
+          <select id="lib-filter" class="opt-select"></select>
+          <span class="clip-count" id="lib-count">0 clips</span>
+        </div>
+        <div id="library-list" class="library-list"></div>
+      </div>
+
+      <div class="tab-panel" id="tab-data">
+        <h2 class="tab-title">Data Management</h2>
+        <p class="tab-desc">Import, export, or clear your clip library.</p>
+        <div class="card">
+          <div class="card-label">EXPORT AS JSON</div>
+          <p class="card-desc">Download all clips and notebooks as a JSON file.</p>
+          <button class="save-btn" id="export-json-btn">Export JSON</button>
+        </div>
+        <div class="card">
+          <div class="card-label">EXPORT AS MARKDOWN</div>
+          <p class="card-desc">Download all clips as a readable Markdown file.</p>
+          <button class="save-btn secondary" id="export-md-btn">Export Markdown</button>
+        </div>
+        <div class="card">
+          <div class="card-label">IMPORT</div>
+          <p class="card-desc">Import clips from a previously exported JSON file.</p>
+          <button class="save-btn secondary" id="import-btn">Import Data</button>
+          <input type="file" id="import-file" accept=".json" style="display:none">
+        </div>
+        <div class="card danger-card">
+          <div class="card-label">DANGER ZONE</div>
+          <p class="card-desc">Permanently delete all clips and notebooks. This cannot be undone.</p>
+          <button class="danger-btn" id="clear-btn">Clear All Data</button>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-about">
+        <h2 class="tab-title">About AIClip</h2>
+        <p class="tab-desc">Clip and save AI chatbot responses with one click.</p>
+        <div class="card">
+          <div class="card-label">VERSION</div>
+          <p class="about-text">AIClip v1.0.0</p>
+        </div>
+        <div class="card">
+          <div class="card-label">HOW IT WORKS</div>
+          <p class="about-text">When you visit a supported AI chatbot, a Clip button appears on each AI response. Click it to save the response to your library. You can also select any text and right-click to clip it.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">KEYBOARD SHORTCUT</div>
+          <p class="about-text">Press <kbd>Alt</kbd> + <kbd>C</kbd> on any supported AI site to open the clips overlay.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">EXPORT FORMATS</div>
+          <p class="about-text">JSON — full backup with metadata, importable back into AIClip.<br>Markdown — human-readable format for notes, docs, or sharing.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">SYNC</div>
+          <p class="about-text">Clips sync automatically across all devices where you're signed into Chrome.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">PRIVACY</div>
+          <p class="about-text">All data is stored locally in Chrome sync storage. No external APIs, no servers, no tracking.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

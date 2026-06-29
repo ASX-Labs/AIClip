@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-header">
+    <div class="popup-logo">AIClip</div>
+    <span class="popup-version">v1.0</span>
+  </div>
+
+  <div class="section">
+    <div class="section-label">SEARCH CLIPS</div>
+    <div class="search-row">
+      <input type="text" id="search-input" placeholder="Search clips...">
+      <select id="filter-notebook"></select>
+    </div>
+    <div class="filter-row">
+      <button class="filter-btn active" id="filter-all">All</button>
+      <button class="filter-btn" id="filter-favs">Favorites</button>
+    </div>
+  </div>
+
+  <div class="clip-list" id="clip-list"></div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-value" id="stat-total">0</div>
+      <div class="stat-label">Clips</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-notebooks">0</div>
+      <div class="stat-label">Notebooks</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value" id="stat-favs">0</div>
+      <div class="stat-label">Favorites</div>
+    </div>
+  </div>
+
+  <div class="popup-footer">
+    <button class="footer-link" id="btn-export-json">JSON</button>
+    <button class="footer-link" id="btn-export-md">MD</button>
+    <button class="footer-link" id="btn-import">Import</button>
+    <button class="footer-link" id="btn-options">Settings</button>
+  </div>
+
+  <input type="file" id="import-file" accept=".json" style="display:none">
+  <script src="popup.js"></script>
+</body>
+</html>

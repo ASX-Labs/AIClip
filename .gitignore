@@ -1,0 +1,15 @@
+*.crx
+*.pem
+*.zip
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.suo
+*.user
+*.log
+npm-debug.log*
+node_modules/
+dist/
+build/

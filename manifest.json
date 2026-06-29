@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "AIClip",
+  "version": "1.0.0",
+  "description": "Clip and save AI chatbot responses with one click. Organize into notebooks, tag, search, and export.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://www.perplexity.ai/*",
+    "https://perplexity.ai/*",
+    "https://grok.x.com/*",
+    "https://chat.deepseek.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://www.perplexity.ai/*",
+        "https://perplexity.ai/*",
+        "https://grok.x.com/*",
+        "https://chat.deepseek.com/*"
+      ],
+      "js": ["content/clipper.js"],
+      "css": ["styles/clipper.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "commands": {
+    "open-clips": {
+      "suggested_key": {
+        "default": "Alt+C"
+      },
+      "description": "Open clips overlay"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
